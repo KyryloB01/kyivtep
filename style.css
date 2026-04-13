@@ -62,10 +62,14 @@ h1, h2, p {
 }
 @media (min-width: 901px) {
     .home-page .top-nav {
-        justify-content: center;
+        display: block;
+        text-align: center;
     }
     .home-page .top-nav-links {
+        display: inline-flex;
         justify-content: center;
+        margin: 0 auto;
+        gap: 3rem;
     }
 }
 @media (max-width: 900px) {
