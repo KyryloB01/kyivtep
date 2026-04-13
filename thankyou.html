@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="15;url=index.html">
+    <title>Дякуємо - КиївТеп</title>
+    <link rel="icon" type="image/png" href="logo3.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .thanks-wrap {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .thanks-card {
+            background: rgba(17, 24, 39, 0.55);
+            border: 1px solid rgba(212, 163, 77, 0.35);
+            border-radius: 0.75rem;
+            padding: 2rem 1.5rem;
+            max-width: 42rem;
+            width: 100%;
+        }
+        .thanks-title {
+            color: #d4a34d;
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            margin: 0 0 1rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+        .thanks-text {
+            color: #e5e7eb;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        .thanks-timer {
+            color: #d4a34d;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <main class="thanks-wrap">
+        <section class="thanks-card">
+            <h1 class="thanks-title">Дякуємо!</h1>
+            <p class="thanks-text">Ваше повідомлення успішно надіслано.</p>
+            <p class="thanks-text">Через <span id="timer" class="thanks-timer">15</span> секунд вас поверне на головну сторінку.</p>
+        </section>
+    </main>
+
+    <script>
+        let seconds = 15;
+        const timer = document.getElementById("timer");
+        const intervalId = setInterval(function () {
+            seconds -= 1;
+            if (seconds <= 0) {
+                clearInterval(intervalId);
+                window.location.href = "index.html";
+                return;
+            }
+            timer.textContent = String(seconds);
+        }, 1000);
+    </script>
+</body>
+</html>
