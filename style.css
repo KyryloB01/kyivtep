@@ -60,6 +60,14 @@ h1, h2, p {
 .top-nav-links a:hover {
     color: #f3d29a;
 }
+@media (min-width: 901px) {
+    .home-page .top-nav {
+        justify-content: center;
+    }
+    .home-page .top-nav-links {
+        justify-content: center;
+    }
+}
 @media (max-width: 900px) {
     .top-nav {
         flex-direction: column;
